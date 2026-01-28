@@ -42,8 +42,8 @@ margin-top: 15px;
 <!-- PHOTOS : ajoute autant d'images que tu veux -->
 <div class="slider">
 <img src="photo1.png" class="active" alt="Photo 1">
-<img src="photo2.JPG" alt="Photo 2">
-<img src="photo3.JPG" alt="Photo 3">
+<img src="photo2.png" alt="Photo 2">
+<img src="photo3.png" alt="Photo 3">
 </div>
 
 
@@ -65,7 +65,7 @@ setInterval(() => {
 images[index].classList.remove('active');
 index = (index + 1) % images.length;
 images[index].classList.add('active');
-}, 3000); // change toutes les 3 secondes
+}, 3000); // change toutes les 5 secondes
 </script>
 </body>
 </html>

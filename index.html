@@ -1,75 +1,71 @@
 <!DOCTYPE html>
-
 <html lang="fr">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <title>Souvenir</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-
-    body {
-
-      margin: 0;
-
-      min-height: 100vh;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      background: #f2f2f2;
-
-      font-family: Arial, sans-serif;
-
-    }
-
-    .container {
-
-      text-align: center;
-
-    }
-
-    img {
-
-      max-width: 90%;
-
-      border-radius: 12px;
-
-    }
-
-    audio {
-
-      width: 90%;
-
-      margin-top: 15px;
-
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<title>Souvenir</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+margin: 0;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background: #f2f2f2;
+font-family: Arial, sans-serif;
+}
+.container {
+text-align: center;
+max-width: 90%;
+}
+.slider {
+position: relative;
+}
+.slider img {
+width: 100%;
+border-radius: 12px;
+display: none;
+}
+.slider img.active {
+display: block;
+}
+audio {
+width: 100%;
+margin-top: 15px;
+}
+</style>
 </head>
-
 <body>
+<div class="container">
 
-  <div class="container">
 
-    <img src="ma binome.png" alt="ma binome">
+<!-- PHOTOS : ajoute autant d'images que tu veux -->
+<div class="slider">
+<img src="photo1.png" class="active" alt="Photo 1">
+<img src="photo2.jpg" alt="Photo 2">
+<img src="photo3.jpg" alt="Photo 3">
+</div>
 
-    <audio controls>
 
-      <source src="musique.mp3" type="audio/mpeg">
+<!-- MUSIQUE -->
+<audio controls>
+<source src="musique.mp3" type="audio/mpeg">
+</audio>
 
-    </audio>
 
-  </div>
+</div>
 
+
+<script>
+const images = document.querySelectorAll('.slider img');
+let index = 0;
+
+
+setInterval(() => {
+images[index].classList.remove('active');
+index = (index + 1) % images.length;
+images[index].classList.add('active');
+}, 3000); // change toutes les 3 secondes
+</script>
 </body>
-
-</html
+</html>
